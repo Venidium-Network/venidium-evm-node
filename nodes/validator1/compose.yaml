@@ -1,0 +1,47 @@
+version: '3.7'
+services:
+  nethermind:
+    init: true
+    container_name: venidium-validator1
+    image: nethermind/nethermind:latest
+    environment:
+      NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS: "true"
+      NETHERMIND_AURACONFIG_FORCESEALING: "true"
+      NETHERMIND_AURACONFIG_TXPRIORITYCONTRACTADDRESS: "0x4100000000000000000000000000000000000000"
+      NETHERMIND_INITCONFIG_CHAINSPECPATH: "/nethermind/spec.json"
+      NETHERMIND_INITCONFIG_ISMINING: "true"
+      NETHERMIND_INITCONFIG_STORERECEIPTS: "false"
+      # enabling JSONRPC is not a strict requirement for validator nodes, set below line to "true" if needed
+      NETHERMIND_JSONRPCCONFIG_ENABLED: "false"
+      NETHERMIND_JSONRPCCONFIG_ENABLEDMODULES: "[Eth,Net,Web3]"
+      NETHERMIND_JSONRPCCONFIG_HOST: 0.0.0.0
+      NETHERMIND_JSONRPCCONFIG_PORT: 8545
+      NETHERMIND_JSONRPCCONFIG_ADDITIONALRPCURLS: http://0.0.0.0:8545
+      # below is the private key for the miner account. Generate a 32 byte number (represented as 64 hex characters)
+      NETHERMIND_KEYSTORECONFIG_TESTNODEKEY: "0000000000000000000000000000000000000000000000000000000000000000"
+      # when nethermind is starting, it will display the miner account in the output
+      NETHERMIND_MININGCONFIG_MINGASPRICE: "1000000000"
+      NETHERMIND_MININGCONFIG_TARGETBLOCKGASLIMIT: "30000000"
+      NETHERMIND_NETWORKCONFIG_DISCOVERYPORT: 30301
+      NETHERMIND_NETWORKCONFIG_P2PPORT: 30301
+      NETHERMIND_PRUNINGCONFIG_ENABLED: "true"
+      NETHERMIND_SYNCCONFIG_FASTSYNC: "false"
+      NETHERMIND_SYNCCONFIG_FASTBLOCKS: "false"
+      NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC: "false"
+      NETHERMIND_SYNCCONFIG_DOWNLOADRECEIPTSINFASTSYNC: "false"
+    volumes:
+      - ../spec.json:/nethermind/spec.json:ro
+      - ./data/logs:/nethermind/logs
+      - ./data/keystore:/nethermind/keystore
+      - ./data/nethermind_db:/nethermind/nethermind_db
+    ports:
+      # exposing the RPC port is not a strict requirement for validator nodes, uncomment (remove '#' on the following line if needed)
+      #- "127.0.0.1:8545:8545"
+      - "30301:30301"
+      - "30301:30301/udp"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
