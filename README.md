@@ -47,11 +47,11 @@ _the commands shown bellow should be typed in your terminal window_
 1. On your terminal window type `cd ` and make sure to leave a space after the command (don’t press enter yet)
 1. Drag-n-drop the `venidium-evm-node` folder on the terminal window and press enter
 1. Type `./generate-key.sh` to generate a new private key and copy it
-1. Edit `compose.yml` in `validator1` directory and replace `0000000000000000000000000000000000000000000000000000000000000000` on line `21` with the newly generated key that you have copied
+1. Edit `compose.yml` in `nodes/validator1` directory and replace `0000000000000000000000000000000000000000000000000000000000000000` on line `21` with the newly generated key that you have copied
 
-_⚠️ It is very important to NOT USE this private key as an account ⚠️_
-_⚠️ DO NOT import this private key to any wallet ⚠️_
-_⚠️ DO NOT make any transactions using this private key ⚠️_
+_⚠️ It is very important to NOT USE this private key as an account ⚠️_  
+_⚠️ DO NOT import this private key to any wallet ⚠️_  
+_⚠️ DO NOT make any transactions using this private key ⚠️_  
 
 ### Operate the node
 
@@ -74,11 +74,11 @@ For the following instructions to work you will need to have Docker Desktop runn
 ### Set up your node configuration
 
 1. Open the `generate-key.sh` file to generate a new private key and copy it
-1. Edit `compose.yml` in `validator1` directory and replace `0000000000000000000000000000000000000000000000000000000000000000` on line `21` with the newly generated key that you have copied
+1. Edit `compose.yml` in `nodes/validator1` directory and replace `0000000000000000000000000000000000000000000000000000000000000000` on line `21` with the newly generated key that you have copied
 
-_⚠️ It is very important to NOT USE this private key as an account ⚠️_
-_⚠️ DO NOT import this private key to any wallet ⚠️_
-_⚠️ DO NOT make any transactions using this private key ⚠️_
+_⚠️ It is very important to NOT USE this private key as an account ⚠️_  
+_⚠️ DO NOT import this private key to any wallet ⚠️_  
+_⚠️ DO NOT make any transactions using this private key ⚠️_  
 
 ### Operate the node
 
