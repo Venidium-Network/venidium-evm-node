@@ -12,10 +12,10 @@ Stable Internet Connection
 
 ## Recommended System Requirements
 
-CPU: 4 cores
-RAM: 6GB
-Disk: 250GB SSD
-Stable Internet Connection
+CPU: 4 cores  
+RAM: 6GB  
+Disk: 250GB SSD  
+Stable Internet Connection  
 
 ## Getting the required files
 
