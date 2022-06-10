@@ -21,6 +21,8 @@ Stable Internet Connection
 
 Clone this repository or [download the repository as a zip file](https://github.com/Venidium-Network/venidium-evm-node/archive/refs/heads/main.zip) and extract it
 
+In the extracted files, you should see a `nodes` directory.
+
 ## Linux
 
 ### [Install Docker and Docker Compose](https://docs.docker.com/engine/install/) (choose the Linux tab)
@@ -45,8 +47,8 @@ _the commands shown bellow should be typed in your terminal window_
 ### Set up your node configuration
 
 1. On your terminal window type `cd ` and make sure to leave a space after the command (don’t press enter yet)
-1. Drag-n-drop the `venidium-evm-node` folder on the terminal window and press enter
-1. Type `./generate-key.sh` to generate a new private key and copy it
+1. Drag-n-drop the `nodes` folder on the terminal window and press enter
+1. Type `../generate-key.sh` to generate a new private key and copy it
 1. Edit `compose.yml` in `nodes/validator1` directory and replace `0000000000000000000000000000000000000000000000000000000000000000` on line `21` with the newly generated key that you have copied
 
 _⚠️ It is very important to NOT USE this private key as an account ⚠️_  
@@ -56,7 +58,7 @@ _⚠️ DO NOT make any transactions using this private key ⚠️_
 ### Operate the node
 
 1. Open a terminal window, type `cd ` and make sure that you leave a space after the command (don't press enter yet)
-1. Drag-n-drop the `venidium-evm-node` folder on the terminal window and press enter
+1. Drag-n-drop the `nodes` folder on the terminal window and press enter
 
 To start the node type `./run_all.sh` in the terminal and press enter.
 
@@ -82,9 +84,9 @@ _⚠️ DO NOT make any transactions using this private key ⚠️_
 
 ### Operate the node
 
-To start the node open the `run_all.sh` file.
+To start the node open the `run_all.sh` file which is inside the `nodes` folder.
 
 To monitor your node open the `monitor-node.sh` file in the `nodes/validator1` directory.
 You can check for any errors and see if your node is syncing.
 
-To stop the node open the `stop_all.sh` file.
+To stop the node open the `stop_all.sh` file which is inside the `nodes` folder.
