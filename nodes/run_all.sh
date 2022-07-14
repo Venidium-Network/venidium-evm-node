@@ -1,5 +1,5 @@
 #!/bin/bash
-docker pull nethermind/nethermind:latest
+docker pull nethermind/nethermind:1.13.3
 for d in */ ; do
     cd "$d" ; docker compose up -d ; cd -
 done
