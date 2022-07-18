@@ -3,7 +3,7 @@ services:
   nethermind:
     init: true
     container_name: venidium-validator1
-    image: nethermind/nethermind:1.13.3
+    image: nethermind/nethermind:1.13.4
     environment:
       NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS: "true"
       NETHERMIND_AURACONFIG_FORCESEALING: "true"
@@ -30,6 +30,7 @@ services:
       NETHERMIND_SYNCCONFIG_FASTBLOCKS: "false"
       NETHERMIND_SYNCCONFIG_DOWNLOADBODIESINFASTSYNC: "false"
       NETHERMIND_SYNCCONFIG_DOWNLOADRECEIPTSINFASTSYNC: "false"
+      NETHERMIND_SYNCCONFIG_SNAPSYNC: "false"
     volumes:
       - ../spec.json:/nethermind/spec.json:ro
       - ./data/logs:/nethermind/logs
