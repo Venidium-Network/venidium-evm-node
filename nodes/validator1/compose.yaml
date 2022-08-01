@@ -3,7 +3,7 @@ services:
   nethermind:
     init: true
     container_name: venidium-validator1
-    image: nethermind/nethermind:1.13.4
+    image: nethermind/nethermind:1.13.5
     environment:
       NETHERMIND_AURACONFIG_ALLOWAURAPRIVATECHAINS: "true"
       NETHERMIND_AURACONFIG_FORCESEALING: "true"
